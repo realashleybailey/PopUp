@@ -11,8 +11,7 @@ extension View {
     public func popUp<Content: View>(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, @ViewBuilder content: @escaping () -> Content) -> some View {
         return ZStack {
             self
-			PopUp(isPresented: isPresented,
-                          onDismiss: onDismiss) {
+			PopUp(isPresented: isPresented, onDismiss: onDismiss) {
                 content()
             }
         }
