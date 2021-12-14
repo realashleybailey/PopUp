@@ -18,12 +18,6 @@ public struct PopUp<Content: View>: View {
         self.content = content()
     }
     
-    @GestureState private var viewOffset: CGFloat = 0.0
-    
-    var isiPad: Bool {
-        UIDevice.current.userInterfaceIdiom == .pad
-    }
-    
     public var body: some View {
             ZStack {
                 if isPresented.wrappedValue {
