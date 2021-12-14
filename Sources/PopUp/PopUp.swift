@@ -18,14 +18,6 @@ public struct PopUp<Content: View>: View {
         self.content = content()
     }
     
-    @available(*, deprecated, message: "Replace option parameters with the new option set.")
-    public init(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, content: @escaping () -> Content) {
-        self.isPresented = isPresented
-        self.onDismiss = onDismiss
-        
-        self.content = content()
-    }
-    
     @GestureState private var viewOffset: CGFloat = 0.0
     
     var isiPad: Bool {

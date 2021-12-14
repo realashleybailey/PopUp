@@ -19,12 +19,6 @@ public struct PopUpView<Content: View>: View {
         self.content = content()
     }
     
-    public init(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, content: @escaping () -> Content) {
-        self.isPresented = isPresented
-        self.onDismiss = onDismiss
-        self.content = content()
-    }
-    
     public var body: some View {
         PopUp(isPresented: isPresented, onDismiss: onDismiss, content: {
             content
