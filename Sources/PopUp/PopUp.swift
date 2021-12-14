@@ -26,9 +26,6 @@ public struct PopUp<Content: View>: View {
 						.edgesIgnoringSafeArea(.all)
 						.transition(.opacity)
 						.zIndex(1)
-						.onTapGesture {
-							dismiss()
-						}
                     
                     Group {
 						content
