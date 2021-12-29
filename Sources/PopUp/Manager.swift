@@ -19,7 +19,7 @@ public struct PopUpManager {
         controller.modalPresentationStyle = .overFullScreen
         controller.overrideUserInterfaceStyle = style
         
-        UIApplication.shared.windows.first?.rootViewController?.present(controller, animated: false)
+        UIApplication.shared.windows.first?.rootViewController?.present(controller, animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
             withAnimation {
                 isPresented.wrappedValue = true
@@ -33,7 +33,7 @@ public struct PopUpManager {
             isPresented.wrappedValue = false
         }
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
-            UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: false)
+            UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
         }
     }
 }
