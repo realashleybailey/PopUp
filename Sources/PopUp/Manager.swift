@@ -18,7 +18,8 @@ public struct PopUpManager {
         controller.view.backgroundColor = .clear
         controller.modalPresentationStyle = .overFullScreen
         controller.overrideUserInterfaceStyle = style
-        
+		controller.modalTransitionStyle = .crossDissolve
+		
         UIApplication.shared.windows.first?.rootViewController?.present(controller, animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
             withAnimation {
